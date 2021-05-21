@@ -2,12 +2,12 @@
 name: Test App
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
 
 jobs:
-  deploy:
-
+  test:
     runs-on: ubuntu-latest
 
     steps:
