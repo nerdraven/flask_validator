@@ -5,17 +5,17 @@ It is when created, it will be used to decorate a flask route immediately after 
 
 ```python
 
-from flask import Flask
-from flask_validator import JSONValidator, Fields
+from flask import Flask, request
+from flask_validator import APIValidator, fields
 
 app = Flask(__name__)
 
-class Validator(JSONValidator):
-    name = Fields.StringFields()
+class Validator(APIValidator):
+    name = fields.StringFields()
 
 @app.route("/")
 def index():
-    name = request.json.get("name")
+    name = request.json.get("field")
     return f"Hello, {name}", 200
 
 ```
