@@ -1,12 +1,5 @@
 import pytest
 from flask.testing import FlaskClient
-from app.app import app
-
-
-@pytest.fixture()
-def test_client():
-    with app.test_client() as client:
-        yield client
 
 
 def test_app_works(test_client: FlaskClient):
